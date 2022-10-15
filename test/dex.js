@@ -19,7 +19,7 @@ contract('Dex', accounts => {
 	)
 
 	beforeEach(async () => {
-		;[dai, bat, rep, zrx] = await Promise.all([
+		[dai, bat, rep, zrx] = await Promise.all([
 			Dai.new(),
 			Bat.new(),
 			Rep.new(),
@@ -280,7 +280,7 @@ contract('Dex', accounts => {
 		)
 	})
 
-	/* it('should NOT create market order if token balance is too low', async () => {
+	it('should NOT create market order if token balance is too low', async () => {
 		await dex.deposit(
 			web3.utils.toWei('99'),
 			REP,
@@ -296,7 +296,7 @@ contract('Dex', accounts => {
 			),
 			'token balance too low'
 		)
-	}) */
+	})
 
 	it('should NOT create market order if DAI balance is too low', async () => {
 		await dex.deposit(

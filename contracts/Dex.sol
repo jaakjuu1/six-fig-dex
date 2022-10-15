@@ -1,4 +1,3 @@
-//SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.0;
 
 import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
@@ -101,7 +100,7 @@ contract Dex {
         external {
         require(
             traderBalances[msg.sender][ticker] >= amount,
-            'token balance too low'
+            'balance too low'
         ); 
         traderBalances[msg.sender][ticker] -= amount;
         IERC20(tokens[ticker].tokenAddress).transfer(msg.sender, amount);
